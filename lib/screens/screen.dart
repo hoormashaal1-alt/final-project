@@ -24,11 +24,9 @@ class _AddSubscriptionPageState extends State<AddSubscriptionPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          
           image: AssetImage("lib/assets/images/welcome_bg.jpg"), 
           fit: BoxFit.cover,
         ),
@@ -64,7 +62,6 @@ class SubscriptionsListPage extends StatefulWidget {
 }
 
 class _SubscriptionsListPageState extends State<SubscriptionsListPage> {
-  // و بدون تغيير,,,,,,,,,,,,,,,,,,,,,,,,,, 
   final _companyController = TextEditingController();
   final _priceController = TextEditingController();
   String _selectedPeriod = 'monthly';
@@ -94,6 +91,19 @@ class _SubscriptionsListPageState extends State<SubscriptionsListPage> {
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e')));
+      }
+    }
+  }
+
+  Future<void> _deleteSubscription(dynamic id) async {
+    try {
+      await Supabase.instance.client
+          .from('project')
+          .delete()
+          .match({'id': id});
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Delete Error: $e')));
       }
     }
   }
@@ -150,7 +160,9 @@ class _SubscriptionsListPageState extends State<SubscriptionsListPage> {
         elevation: 0,
       ),
       body: StreamBuilder<List<Map<String, dynamic>>>(
-        stream: Supabase.instance.client.from('project').stream(primaryKey: ['id']),
+        stream: Supabase.instance.client
+            .from('project')
+            .stream(primaryKey: ['id']),
         builder: (context, snapshot) {
           if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
           final subs = snapshot.data!;
@@ -167,7 +179,16 @@ class _SubscriptionsListPageState extends State<SubscriptionsListPage> {
                   leading: const Icon(Icons.subscriptions, color: AppColors.pink),
                   title: Text(item['company'], style: const TextStyle(fontWeight: FontWeight.bold)),
                   subtitle: Text("End at: ${DateFormat('yyyy-MM-dd').format(expiry)}"),
-                  trailing: Text("${item['price']} SR", style: const TextStyle(color: AppColors.green, fontWeight: FontWeight.bold)),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text("${item['price']} SR", style: const TextStyle(color: AppColors.green, fontWeight: FontWeight.bold)),
+                      IconButton(
+                        icon: const Icon(Icons.delete_outline, color: Colors.redAccent),
+                        onPressed: () => _deleteSubscription(item['id']),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

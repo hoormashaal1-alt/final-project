@@ -3,7 +3,7 @@ import '../ultils/colors.dart';
 import "../widget/textField.dart";
 import '../service/database.dart';
 import "../extension/nav.dart";
-import"../screens/signUP.dart";
+import"../screens/signUp.dart";
 import"../screens/screen.dart";
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginPage> {
                     ),
                     TextButton(
                       onPressed: () {
-                        context.pushAndDelete(signUp());
+                        context.pushAndDelete(signUpPage());
                       },
                       child: const Text("don't have an account? sign up"),
                     ),

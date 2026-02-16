@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import '../ultils/colors.dart'; 
 import"../screens/login.dart";
-import"../screens/signUP.dart";
+import"../screens/signUp.dart";
 class ThirdPage extends StatelessWidget {
   const ThirdPage({super.key});
 
@@ -31,7 +31,7 @@ class ThirdPage extends StatelessWidget {
     
     ,),
           ),ElevatedButton(
-           onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => signUp(),)),
+           onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => signUpPage(),)),
             child: Text("Sign in"),),ElevatedButton(
            onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => LoginPage(),)),
             child: Text("Log in   ")),Spacer(),Padding(
