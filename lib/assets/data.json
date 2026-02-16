@@ -1,0 +1,15 @@
+[
+  { "company": "Netflix", "price": 45, "period": "monthly", "image": "https://logo.clearbit.com/netflix.com" },
+  { "company": "Spotify", "price": 20, "period": "monthly", "image": "https://logo.clearbit.com/spotify.com" },
+  { "company": "YouTube Premium", "price": 25, "period": "monthly", "image": "https://logo.clearbit.com/youtube.com" },
+  { "company": "Amazon Prime", "price": 150, "period": "yearly", "image": "https://logo.clearbit.com/amazon.com" },
+  { "company": "Disney+", "price": 30, "period": "monthly", "image": "https://logo.clearbit.com/disneyplus.com" },
+  { "company": "ChatGPT Plus", "price": 75, "period": "monthly", "image": "https://logo.clearbit.com/openai.com" },
+  { "company": "PlayStation Plus", "price": 250, "period": "yearly", "image": "https://logo.clearbit.com/playstation.com" },
+  { "company": "Xbox Game Pass", "price": 40, "period": "monthly", "image": "https://logo.clearbit.com/xbox.com" },
+  { "company": "Apple Music", "price": 22, "period": "monthly", "image": "https://logo.clearbit.com/apple.com" },
+  { "company": "Hulu", "price": 35, "period": "monthly", "image": "https://logo.clearbit.com/hulu.com" },
+  { "company": "LinkedIn Learning", "price": 500, "period": "yearly", "image": "https://logo.clearbit.com/linkedin.com" },
+  { "company": "Adobe Creative Cloud", "price": 180, "period": "monthly", "image": "https://logo.clearbit.com/adobe.com" },
+  { "company": "Duolingo Plus", "price": 45, "period": "6 months", "image": "https://logo.clearbit.com/duolingo.com" }
+]
