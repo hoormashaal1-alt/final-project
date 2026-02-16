@@ -32,9 +32,9 @@ class ThirdPage extends StatelessWidget {
     ,),
           ),ElevatedButton(
            onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => signUp(),)),
-            child: Text("sign in"),),ElevatedButton(
+            child: Text("Sign in"),),ElevatedButton(
            onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => LoginPage(),)),
-            child: Text("login   ")),Spacer(),Padding(
+            child: Text("Log in   ")),Spacer(),Padding(
         padding: EdgeInsets.all(20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween, 

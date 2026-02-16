@@ -5,13 +5,13 @@ import '../service/database.dart';
 import "../screens/login.dart";
 import "../extension/nav.dart";
 
-class signUp extends StatefulWidget {
-  const signUp({super.key});
+class signUpPage extends StatefulWidget {
+  const signUpPage({super.key});
   @override
-  State<signUp> createState() => _SigninState();
+  State<signUpPage> createState() => _SigninState();
 }
 
-class _SigninState extends State<signUp> {
+class _SigninState extends State<signUpPage> {
   var emailController = TextEditingController();
   var passWordController = TextEditingController();
 

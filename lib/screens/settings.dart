@@ -10,8 +10,6 @@ class ThemeProvider extends ChangeNotifier {
     notifyListeners();
   }
 }
-
-// 2. واجهة صفحة الإعدادات (UI)
 class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
